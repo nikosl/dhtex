@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DHTex Chord</title>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <style>
+    #mynetwork {
+      width: 800px;
+      height: 600px;
+      border: 1px solid lightgray;
+    }
+  </style>
+</head>
+
+<body x-data="networkData()" x-init="init()">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">DHTex</h1>
+        <p class="subtitle">Distributed Hash Tables</p>
+      </div>
+
+    </div>
+  </section>
+  <div class="columns">
+    <div class="column is-two-thirds">
+      <div class="container">
+        <div id="mynetwork" class="box">
+        </div>
+        <!--     <span class="icon-text"><span class="icon">
+      <i class="fas fa-heading fa-lg"></i>
+    </span>
+Jj Buttons -->
+        <div class="field is-grouped is-centered">
+          <p class="control"><button class="button is-danger" @click="reset()">Reset</button></p>
+          <p class="control"><button class="button is-primary" x-bind:class="loading && 'is-loading'"
+              x-on:click="loading = !loading" @click="updateGraph()">Update Graph</button></p>
+          <p class="control"><button class="button is-link" @click="newNode()">New Node</button> </p>
+        </div>
+        <script src="./js/app.js"></script>
+      </div>
+    </div>
+    <div class="column is-vcentered">
+      <article class="message">
+        <div class="message-header">
+          <p>Chord DHT</p>
+        </div>
+        <div class="message-body">
+          In computing, <a href="https://en.wikipedia.org/wiki/Chord_(peer-to-peer)#Overview">Chord</a> is
+          a protocol and algorithm for a peer-to-peer distributed hash table.
+          A distributed hash table stores key-value pairs by assigning keys to
+          different computers (known as "nodes"); a node will store the values for
+          all the keys for which it is responsible.
+          Chord specifies how keys are assigned to nodes,
+          and how a node can discover the value for a given key by
+          first locating the node responsible for that key.
+        </div>
+      </article>
+    </div>
+  </div>
+</body>
+
+</html>
